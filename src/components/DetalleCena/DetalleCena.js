@@ -24,13 +24,16 @@ const DetalleCena = () => {
     variables: { id }
   })
 
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>Error :(</p>
+
   return (
     <div>
       <p>DetalleCena {id}</p>
       <p>Titulo: {data && data.findCenaByID.titulo}</p>
       <p>Paga: {data && data.findCenaByID.paga.nombre}</p>
       <p>Monto: {data && data.findCenaByID.monto}</p>
-      <p>Se dividio: {data && data.findCenaByID.dividida && 'si' || 'no'}</p>
+      <p>Se dividio: {data && data.findCenaByID.dividida ? 'si' : 'no'}</p>
     </div>
   )
 }

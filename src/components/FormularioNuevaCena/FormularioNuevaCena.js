@@ -1,17 +1,28 @@
 import React, { useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import './FormularioNuevaCena.css'
-import gql from 'graphql-tag';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation, useQuery } from '@apollo/react-hooks'
+import gql from 'graphql-tag'
+
+const OBTENER_COMENSALES = gql`
+  {
+    getComensales {
+      data {
+        _id
+        nombre
+      }
+    }
+  }
+`
 
 const AGREGAR_CENA = gql`
-  mutation createCena($titulo: String!, $monto: Int!, $dividida: Boolean!) {
+  mutation createCena($titulo: String!, $monto: Int!, $dividida: Boolean!, $paga: ID!) {
     createCena(data: {
       titulo: $titulo
       monto: $monto
       dividida: $dividida
       paga: {
-        connect: "249858179658154515"
+        connect: $paga
       }
     }) {
       titulo
@@ -20,13 +31,18 @@ const AGREGAR_CENA = gql`
 `;
 
 const FormularioNuevaCena = () => {
-
+  
+  const { loading, error, data: dataComensales } = useQuery(OBTENER_COMENSALES)
   const [addTodo, { data }] = useMutation(AGREGAR_CENA)
   const [variables, setVariables] = useState({
     titulo: '',
     monto: 0,
-    dividida: false
+    dividida: false,
+    paga: ''
   })
+
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>Error :(</p>
 
   if (data) {
     return <Redirect to="/" />
@@ -58,6 +74,16 @@ const FormularioNuevaCena = () => {
           type="checkbox"
           onChange={e => setVariables({...variables, dividida: e.target.checked})}
         />
+        <select onChange={e => setVariables({...variables, paga: e.target.value})}>
+          {dataComensales && dataComensales.getComensales.data.map(({_id, nombre}) => (
+            <option
+              key={_id}
+              value={_id}
+            >
+              {nombre}
+            </option>
+          ))}
+        </select>
         <button type="submit">Add Todo</button>
       </form>
     </div>
