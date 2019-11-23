@@ -1,0 +1,15 @@
+type Cena {
+  titulo: String!
+  monto: Int!
+  dividida: Boolean!
+  paga: Comensal!
+}
+
+type Comensal {
+  nombre: String!
+}
+
+type Query {
+  getCenas: [Cena]
+  getComensales: [Comensal]
+}
