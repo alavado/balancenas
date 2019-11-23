@@ -1,14 +1,19 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter, Route } from 'react-router-dom'
-import Cenas from '../Cenas'
+import { BrowserRouter, Route, Link } from 'react-router-dom'
+import ListaCenas from '../ListaCenas'
+import FormularioNuevaCena from '../FormularioNuevaCena';
+import DetalleCena from '../DetalleCena';
 
 function App() {
   return (
     <>
-      <div>Balancenas</div>
       <BrowserRouter>
-        <Route path="/" exact component={Cenas} />
+        <div><Link to="/">Balancenas</Link></div>
+        <div><Link to="/nuevacena">Agregar cena</Link></div>
+        <Route path="/" exact component={ListaCenas} />
+        <Route path="/nuevacena" exact component={FormularioNuevaCena} />
+        <Route path="/cena" exact component={DetalleCena} />
       </BrowserRouter>
     </>
   );
