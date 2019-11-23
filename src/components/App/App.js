@@ -13,7 +13,7 @@ function App() {
         <div><Link to="/nuevacena">Agregar cena</Link></div>
         <Route path="/" exact component={ListaCenas} />
         <Route path="/nuevacena" exact component={FormularioNuevaCena} />
-        <Route path="/cena" exact component={DetalleCena} />
+        <Route path="/cena/:id" exact component={DetalleCena} />
       </BrowserRouter>
     </>
   );

@@ -1,5 +1,6 @@
 import React from 'react'
 import './ListaCenas.css'
+import { Link } from 'react-router-dom'
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
 
@@ -19,10 +20,9 @@ const ListaCenas = () => {
   const { loading, error, data } = useQuery(OBTENER_CENAS)
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error :(</p>
-  console.log({data})
   return data.getCenas.data.map(({ _id, _ts, titulo }) => (
     <div key={_id}>
-      <p>{_ts} - {titulo}</p>
+      <Link to={`/cena/${_id}`}>{_ts} - {titulo}</Link>
     </div>
   ))
 }
