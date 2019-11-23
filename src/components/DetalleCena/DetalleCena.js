@@ -10,6 +10,9 @@ const OBTENER_CENA = gql`
       titulo
       monto
       dividida
+      paga {
+        nombre
+      }
     }
   }
 `
@@ -25,6 +28,7 @@ const DetalleCena = () => {
     <div>
       <p>DetalleCena {id}</p>
       <p>Titulo: {data && data.findCenaByID.titulo}</p>
+      <p>Paga: {data && data.findCenaByID.paga.nombre}</p>
       <p>Monto: {data && data.findCenaByID.monto}</p>
       <p>Se dividio: {data && data.findCenaByID.dividida && 'si' || 'no'}</p>
     </div>
