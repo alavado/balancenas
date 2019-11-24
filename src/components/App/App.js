@@ -7,15 +7,13 @@ import DetalleCena from '../DetalleCena';
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <div><Link to="/">Balancenas</Link></div>
-        <div><Link to="/nuevacena">Agregar cena</Link></div>
-        <Route path="/" exact component={ListaCenas} />
-        <Route path="/nuevacena" exact component={FormularioNuevaCena} />
-        <Route path="/cena/:id" exact component={DetalleCena} />
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <div><Link to="/">Balancenas</Link></div>
+      <div><Link to="/nuevacena">Agregar cena</Link></div>
+      <Route path="/" exact component={ListaCenas} />
+      <Route path="/nuevacena" exact component={FormularioNuevaCena} />
+      <Route path="/cena/:id" exact component={DetalleCena} />
+    </BrowserRouter>
   );
 }
 

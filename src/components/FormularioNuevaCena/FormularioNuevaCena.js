@@ -48,6 +48,10 @@ const FormularioNuevaCena = () => {
     return <Redirect to="/" />
   }
 
+  if (variables.paga === '') {
+    setVariables({...variables, paga: dataComensales.getComensales.data[0]._id})
+  }
+
   const enviarFormulario = e => {
     e.preventDefault()
     agregarCena({ variables })

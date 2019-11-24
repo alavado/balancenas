@@ -12,6 +12,7 @@ const OBTENER_CENAS = gql`
         _ts
         titulo
         monto
+        dividida
         paga {
           nombre
         }
@@ -22,9 +23,7 @@ const OBTENER_CENAS = gql`
 
 const ListaCenas = () => {
 
-  const { loading, error, data } = useQuery(OBTENER_CENAS, {
-    pollInterval: 1000
-  })
+  const { loading, error, data } = useQuery(OBTENER_CENAS)
 
   if (loading) return <p>Cargando...</p>
   if (error) return <p>Error :(</p>
@@ -32,7 +31,8 @@ const ListaCenas = () => {
   const cenas = data.getCenas.data
 
   const obtenerCenas = nombre => cenas.filter(v => v.paga.nombre === nombre)
-  const obtenerMonto = nombre => obtenerCenas(nombre).reduce((sum, {monto}) => sum + monto, 0)
+  const obtenerMonto = nombre => obtenerCenas(nombre)
+    .reduce((sum, {monto, dividida}) => sum + monto * (dividida ? .5 : 1), 0)
 
   const montoAlejandro = obtenerMonto('Alejandro')
   const montoCatalina = obtenerMonto('Catalina')
