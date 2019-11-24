@@ -28,12 +28,12 @@ const AGREGAR_CENA = gql`
       titulo
     }
   }
-`;
+`
 
 const FormularioNuevaCena = () => {
   
   const { loading, error, data: dataComensales } = useQuery(OBTENER_COMENSALES)
-  const [addTodo, { data }] = useMutation(AGREGAR_CENA)
+  const [agregarCena, { data }] = useMutation(AGREGAR_CENA)
   const [variables, setVariables] = useState({
     titulo: '',
     monto: 0,
@@ -48,14 +48,14 @@ const FormularioNuevaCena = () => {
     return <Redirect to="/" />
   }
 
-  const agregarCena = e => {
+  const enviarFormulario = e => {
     e.preventDefault()
-    addTodo({ variables })
+    agregarCena({ variables })
   }
 
   return (
     <div>
-      <form onSubmit={agregarCena}>
+      <form onSubmit={enviarFormulario}>
         <label htmlFor="titulo">Título</label>
         <input
           id="titulo"
@@ -84,7 +84,7 @@ const FormularioNuevaCena = () => {
             </option>
           ))}
         </select>
-        <button type="submit">Add Todo</button>
+        <button type="submit">Agregar</button>
       </form>
     </div>
   )
