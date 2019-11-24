@@ -24,7 +24,7 @@ const ELIMINAR_CENA = gql`
       titulo
     }
   }
-`;
+`
 
 const DetalleCena = () => {
 
@@ -48,7 +48,7 @@ const DetalleCena = () => {
       <p>Paga: {data && data.findCenaByID.paga.nombre}</p>
       <p>Monto: {data && data.findCenaByID.monto}</p>
       <p>Se dividio: {data && data.findCenaByID.dividida ? 'si' : 'no'}</p>
-      <button onClick={e => eliminarCena({ variables: { id } })}>Eliminar</button>
+      <button onClick={e => eliminarCena({ variables: { id } })}>Eliminar cena</button>
     </div>
   )
 }
