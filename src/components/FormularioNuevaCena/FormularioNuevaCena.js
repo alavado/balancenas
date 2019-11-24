@@ -41,7 +41,7 @@ const FormularioNuevaCena = () => {
     paga: ''
   })
 
-  if (loading) return <p>Loading...</p>
+  if (loading) return <p>Cargando...</p>
   if (error) return <p>Error :(</p>
 
   if (data) {
