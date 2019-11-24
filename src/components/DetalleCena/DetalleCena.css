@@ -1,0 +1,19 @@
+#detalle-cena h1 {
+  font-weight: bold;
+  padding: 24px;
+  font-size: 1.5em;
+}
+
+#detalle-cena p {
+  margin-top: 16px;
+}
+
+#boton-eliminar-cena {
+  background-color: transparent;
+  padding: 16px;
+  border-radius: 8px;
+  color: #FF3659;
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+}

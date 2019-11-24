@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
 import { Redirect } from 'react-router-dom'
+import { formatearDinero } from '../../helpers/formatos';
 
 const OBTENER_CENA = gql`
   query FindCenaByID($id: ID!) {
@@ -41,14 +42,20 @@ const DetalleCena = () => {
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error :(</p>
 
+  const datosCena = data.findCenaByID
+
   return (
-    <div>
-      <p>DetalleCena {id}</p>
-      <p>Titulo: {data && data.findCenaByID.titulo}</p>
-      <p>Paga: {data && data.findCenaByID.paga.nombre}</p>
-      <p>Monto: {data && data.findCenaByID.monto}</p>
-      <p>Se dividio: {data && data.findCenaByID.dividida ? 'si' : 'no'}</p>
-      <button onClick={e => eliminarCena({ variables: { id } })}>Eliminar cena</button>
+    <div id="detalle-cena">
+      <h1>{datosCena.titulo}</h1>
+      <p>Pagó: {datosCena.paga.nombre}</p>
+      <p>Monto: ${formatearDinero(datosCena.monto)}</p>
+      <p>Se dividió: {datosCena.dividida ? 'si' : 'no'}</p>
+      <button
+        id="boton-eliminar-cena"
+        onClick={e => eliminarCena({ variables: { id } })}
+      >
+        Eliminar cena
+      </button>
     </div>
   )
 }

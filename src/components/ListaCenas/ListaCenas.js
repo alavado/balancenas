@@ -54,7 +54,7 @@ const ListaCenas = () => {
               </div>
             </Link>
         ))}
-        <div id="boton-agregar-cena"><Link to="/nuevacena">Agregar cena</Link></div>
+        <Link to="/nuevacena" id="boton-agregar-cena"><p>Agregar cena</p></Link>
       </div>
     </div>
   )
