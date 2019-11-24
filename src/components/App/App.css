@@ -8,6 +8,17 @@ body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+button {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: #FF3659;
+  padding: 16px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  border: none;
+}
+
 #contenedor {
   width: 100vw;
   display: flex;

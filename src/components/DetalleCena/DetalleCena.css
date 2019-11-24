@@ -8,12 +8,16 @@
   margin-top: 16px;
 }
 
+#detalle-cena img {
+  margin-top: 64px;
+  width: 160px;
+}
+
 #boton-eliminar-cena {
   background-color: transparent;
-  padding: 16px;
-  border-radius: 8px;
   color: #FF3659;
   position: absolute;
   bottom: 16px;
   left: 16px;
+  border: 1px solid #bfbfbf;
 }

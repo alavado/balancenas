@@ -58,7 +58,8 @@ const FormularioNuevaCena = () => {
   }
 
   return (
-    <div>
+    <div id="contenedor-formulario-nueva-cena">
+      <h1>Nueva cena</h1>
       <form id="formulario-nueva-cena" onSubmit={enviarFormulario}>
         <label htmlFor="titulo-nueva-cena">Título</label>
         <input
@@ -94,7 +95,7 @@ const FormularioNuevaCena = () => {
           />
           <label htmlFor="dividida-nueva-cena">Dividir la cuenta</label>
         </div>
-        <button type="submit">Agregar Cena</button>
+        <button id="boton-nueva-cena" type="submit">Agregar esta cena</button>
       </form>
     </div>
   )

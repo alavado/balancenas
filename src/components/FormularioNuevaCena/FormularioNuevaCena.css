@@ -1,9 +1,30 @@
+#contenedor-formulario-nueva-cena h1 {
+  font-weight: bold;
+  padding: 24px;
+  font-size: 1.5em;
+}
+
 #formulario-nueva-cena {
   padding: 16px;
   display: flex;
   flex-direction: column;
+  text-align: left;
 }
 
 #formulario-nueva-cena input, #formulario-nueva-cena select {
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+  font-size: 1em;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #5998B3;
+}
+
+#formulario-nueva-cena label {
+  margin-bottom: 4px;
+}
+
+#boton-nueva-cena {
+  margin-top: 16px;
+  width: 200px;
+  align-self: center;
 }
