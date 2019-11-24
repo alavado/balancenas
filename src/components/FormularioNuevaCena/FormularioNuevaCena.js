@@ -59,26 +59,24 @@ const FormularioNuevaCena = () => {
 
   return (
     <div>
-      <form onSubmit={enviarFormulario}>
-        <label htmlFor="titulo">Título</label>
+      <form id="formulario-nueva-cena" onSubmit={enviarFormulario}>
+        <label htmlFor="titulo-nueva-cena">Título</label>
         <input
-          id="titulo"
+          id="titulo-nueva-cena"
           type="text"
           onChange={e => setVariables({...variables, titulo: e.target.value})}
         />
-        <label htmlFor="monto">Monto</label>
+        <label htmlFor="monto-nueva-cena">Monto</label>
         <input
-          id="monto"
+          id="monto-nueva-cena"
           type="number"
           onChange={e => setVariables({...variables, monto: Number(e.target.value)})}
         />
-        <label htmlFor="dividida">Dividir la cuenta</label>
-        <input
-          id="dividida"
-          type="checkbox"
-          onChange={e => setVariables({...variables, dividida: e.target.checked})}
-        />
-        <select onChange={e => setVariables({...variables, paga: e.target.value})}>
+        <label htmlFor="paga-nueva-cena">Paga</label>
+        <select
+          id="paga-nueva-cena"
+          onChange={e => setVariables({...variables, paga: e.target.value})}
+        >
           {dataComensales && dataComensales.getComensales.data.map(({_id, nombre}) => (
             <option
               key={_id}
@@ -88,7 +86,15 @@ const FormularioNuevaCena = () => {
             </option>
           ))}
         </select>
-        <button type="submit">Agregar</button>
+        <div>
+          <input
+            id="dividida-nueva-cena"
+            type="checkbox"
+            onChange={e => setVariables({...variables, dividida: e.target.checked})}
+          />
+          <label htmlFor="dividida-nueva-cena">Dividir la cuenta</label>
+        </div>
+        <button type="submit">Agregar Cena</button>
       </form>
     </div>
   )

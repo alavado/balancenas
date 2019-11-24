@@ -5,14 +5,15 @@ import ListaCenas from '../ListaCenas'
 import FormularioNuevaCena from '../FormularioNuevaCena';
 import DetalleCena from '../DetalleCena';
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
-      <div><Link to="/">Balancenas</Link></div>
-      <div><Link to="/nuevacena">Agregar cena</Link></div>
-      <Route path="/" exact component={ListaCenas} />
-      <Route path="/nuevacena" exact component={FormularioNuevaCena} />
-      <Route path="/cena/:id" exact component={DetalleCena} />
+      <div id="contenedor">
+        <div id="titulo"><Link to="/">Balancenas</Link></div>
+        <Route path="/" exact component={ListaCenas} />
+        <Route path="/nuevacena" exact component={FormularioNuevaCena} />
+        <Route path="/cena/:id" exact component={DetalleCena} />
+      </div>
     </BrowserRouter>
   );
 }

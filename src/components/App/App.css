@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#contenedor {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+#titulo {
+  background-color: #1D86B3;
+  padding: 16px 0;
+  font-size: 1.5em;
+  font-weight: bolder;
+}
+
+#titulo a {
+  color: white;
+  text-decoration: none;
+}

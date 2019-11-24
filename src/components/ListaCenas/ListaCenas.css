@@ -1,0 +1,60 @@
+#deudor {
+  font-weight: bold;
+  padding: 24px;
+  font-size: 1.5em;
+}
+
+#contenedor-lista-cenas {
+  padding: 0 24px;
+  display: flex;
+  justify-content: center;
+}
+
+#lista-cenas {
+  padding: 0 24px;
+  max-width: 960px;
+  flex: 1;
+}
+
+#lista-cenas a {
+  text-decoration: none;
+  color: #333333;
+}
+
+#lista-cenas div:hover {
+  text-decoration: none;
+  background: #85B7CC;
+}
+
+.fila-lista-cenas {
+  padding: 16px 24px;
+  display: flex;
+  background-color: #D3EBF5;
+  border-radius: 8px;
+  margin-top: 12px;
+  font-size: .8em;
+}
+
+.fila-lista-cenas-monto {
+  width: 100px;
+  text-align: left;
+}
+
+.fila-lista-cenas-titulo {
+  flex: 1;
+  text-align: left;
+}
+
+#boton-agregar-cena {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  background: #FF3659;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+#boton-agregar-cena a {
+  color: white;
+  font-weight: bold;
+}

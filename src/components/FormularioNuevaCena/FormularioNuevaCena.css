@@ -1,0 +1,9 @@
+#formulario-nueva-cena {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+#formulario-nueva-cena input, #formulario-nueva-cena select {
+  margin-bottom: 12px;
+}
