@@ -6,6 +6,7 @@ import { gql } from 'apollo-boost';
 import { Redirect } from 'react-router-dom'
 import { formatearDinero } from '../../helpers/formatos';
 import logo from '../../assets/logo512.png'
+import Loader from '../Loader/Loader';
 
 const OBTENER_CENA = gql`
   query FindCenaByID($id: ID!) {
@@ -40,7 +41,7 @@ const DetalleCena = () => {
     return <Redirect to="/" />
   }
 
-  if (loading) return <p>Cargando...</p>
+  if (loading) return <Loader />
   if (error) return <p>Error :(</p>
 
   const datosCena = data.findCenaByID

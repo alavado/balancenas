@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
 import { formatearDinero } from '../../helpers/formatos';
+import Loader from '../Loader/Loader';
 
 const OBTENER_CENAS = gql`
   {
@@ -30,7 +31,7 @@ const ListaCenas = () => {
     refetch()
   }, [refetch])
 
-  if (loading) return <p>Cargando...</p>
+  if (loading) return <Loader />
   if (error) return <p>Error :(</p>
 
   const cenas = data.getCenas.data
