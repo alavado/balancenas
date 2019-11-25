@@ -1,3 +1,9 @@
+#contenedor-formulario-nueva-cena {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 #contenedor-formulario-nueva-cena h1 {
   font-weight: bold;
   padding: 24px;
@@ -9,6 +15,7 @@
   display: flex;
   flex-direction: column;
   text-align: left;
+  max-width: 960px;
 }
 
 #formulario-nueva-cena input, #formulario-nueva-cena select {

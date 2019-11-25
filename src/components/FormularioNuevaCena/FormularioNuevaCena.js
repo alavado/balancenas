@@ -61,17 +61,17 @@ const FormularioNuevaCena = () => {
     <div id="contenedor-formulario-nueva-cena">
       <h1>Nueva cena</h1>
       <form id="formulario-nueva-cena" onSubmit={enviarFormulario}>
-        <label htmlFor="titulo-nueva-cena">Título</label>
-        <input
-          id="titulo-nueva-cena"
-          type="text"
-          onChange={e => setVariables({...variables, titulo: e.target.value})}
-        />
         <label htmlFor="monto-nueva-cena">Monto</label>
         <input
           id="monto-nueva-cena"
           type="number"
           onChange={e => setVariables({...variables, monto: Number(e.target.value)})}
+        />
+        <label htmlFor="titulo-nueva-cena">Descripción</label>
+        <input
+          id="titulo-nueva-cena"
+          type="text"
+          onChange={e => setVariables({...variables, titulo: e.target.value})}
         />
         <label htmlFor="paga-nueva-cena">Paga</label>
         <select

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './ListaCenas.css'
 import { Link } from 'react-router-dom'
 import { useQuery } from '@apollo/react-hooks';
@@ -24,7 +24,11 @@ const OBTENER_CENAS = gql`
 
 const ListaCenas = () => {
 
-  const { loading, error, data } = useQuery(OBTENER_CENAS)
+  const { loading, error, data, refetch } = useQuery(OBTENER_CENAS)
+
+  useEffect(() => {
+    refetch()
+  }, [refetch])
 
   if (loading) return <p>Cargando...</p>
   if (error) return <p>Error :(</p>
