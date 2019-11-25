@@ -31,3 +31,12 @@ button:hover {
   justify-content: center;
   text-align: center;
 }
+
+.switch-wrapper {
+  display: flex;
+  justify-content: center;
+}
+ 
+.switch-wrapper > div {
+  position: absolute;
+}

@@ -14,6 +14,8 @@
   padding: 0 8px;
   max-width: 540px;
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 #lista-cenas a {
@@ -46,12 +48,12 @@
 }
 
 #boton-agregar-cena {
-  position: absolute;
-  bottom: 16px;
-  right: 16px;
+  width: 200px;
   background-color: #FF3659;
   padding: 16px;
   border-radius: 8px;
+  align-self: center;
+  margin-top: 32px;
 }
 
 #boton-agregar-cena:hover {
