@@ -1,0 +1,16 @@
+#titulo {
+  background-color: #1D86B3;
+  padding: 16px 0;
+  font-size: 1.5em;
+  font-weight: bolder;
+  color: white;
+}
+
+#titulo a {
+  color: white;
+}
+
+#icono-volver {
+  position: absolute;
+  left: 16px;
+}
