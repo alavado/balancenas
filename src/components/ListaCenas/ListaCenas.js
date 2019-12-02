@@ -50,6 +50,7 @@ const ListaCenas = () => {
         <h2 id="deudor">{quienDebe} debe ${formatearDinero(Math.abs(montoAlejandro - montoCatalina))}</h2>
         <h3>Últimas cenas</h3>
         {cenas
+          .filter((cena, i) => i < 5)
           .sort((c1, c2) => c2._ts > c1._ts ? 1 : -1)
           .map(({ _id, _ts, titulo, monto }) => (
             <Link key={_id} to={`/cena/${_id}`}>
