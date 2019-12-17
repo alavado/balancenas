@@ -9,7 +9,7 @@ import ApolloClient from 'apollo-boost'
 const client = new ApolloClient({
   uri: 'https://graphql.fauna.com/graphql',
   headers: {
-    authorization: "Basic Zm5BRGQ2UnJTc0FDRkF4ZWdpNF8wcDdzZHcxeWpFQkVSc1Y4QUpQcTpiYWxhbmNlbmFzOnNlcnZlcg=="
+    authorization: "Basic Zm5BRGYyell5TUFDRktPbFFFZFphU0NLSkdpSDJxVnl5Sm5CZUVGdTpiYWxhbmNlbmFzOnNlcnZlcg=="
   }
 })
 
