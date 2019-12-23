@@ -52,11 +52,15 @@ const ListaCenas = () => {
         {cenas
           .sort((c1, c2) => c2._ts > c1._ts ? 1 : -1)
           .filter((cena, i) => i < 5)
-          .map(({ _id, _ts, titulo, monto }) => (
+          .map(({ _id, titulo, monto, paga, dividida }, i) => (
             <Link key={_id} to={`/cena/${_id}`}>
-              <div className="fila-lista-cenas">
-                <div className="fila-lista-cenas-titulo">{titulo}</div>
-                <div className="fila-lista-cenas-monto">${formatearDinero(monto)}</div>
+              <div className="contenedor-fila-lista-cenas" style={{ animationDelay: `${i * 0.05}s` }}>
+                <div className={`fila-lista-cenas-quien-pago ${paga.nombre === 'Alejandro' ? 'paga1' : 'paga2'}`}>{paga.nombre[0]}</div>
+                <div className="fila-lista-cenas">
+                  <div className="fila-lista-cenas-titulo">{titulo}</div>
+                  <div className="fila-lista-cenas-monto">${formatearDinero(dividida ? (monto / 2) : monto)}</div>
+                </div>
+                <div className={`fila-lista-cenas-quien-pago ${paga.nombre === 'Alejandro' ? 'paga1' : 'paga2'}`}>{paga.nombre[0]}</div>
               </div>
             </Link>
         ))}

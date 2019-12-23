@@ -23,18 +23,19 @@
   color: #333333;
 }
 
-#lista-cenas div:hover {
+.fila-lista-cenas:hover {
   text-decoration: none;
   background: #85B7CC;
 }
 
 .fila-lista-cenas {
-  padding: 16px 24px;
+  padding: 16px 0 16px 24px;
   display: flex;
   background-color: #D3EBF5;
-  border-radius: 8px;
   margin-top: 12px;
   font-size: .8em;
+  align-items: center;
+  flex: 1;
 }
 
 .fila-lista-cenas-monto {
@@ -47,6 +48,32 @@
   text-align: left;
 }
 
+.fila-lista-cenas-quien-pago {
+  width: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+  font-size: .6em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.fila-lista-cenas-quien-pago:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+.fila-lista-cenas-quien-pago:last-child {
+  border-radius: 0 8px 8px 0;
+}
+
+.fila-lista-cenas-quien-pago.paga1 {
+  background-color: #5CABCC;
+}
+
+.fila-lista-cenas-quien-pago.paga2 {
+  background-color: #FF3659;
+}
+
 #boton-agregar-cena {
   width: 200px;
   background-color: #FF3659;
@@ -56,11 +83,26 @@
   margin-top: 32px;
 }
 
-#boton-agregar-cena:hover {
-  background-color: #5CABCC;
-}
-
 #boton-agregar-cena p {
   color: white;
   font-weight: bold;
+}
+
+.contenedor-fila-lista-cenas {
+  display: flex;
+  flex-direction: row;
+  opacity: 0;
+  transform: translateX(-16px);
+  animation: test .25s ease-in-out forwards;
+}
+
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
