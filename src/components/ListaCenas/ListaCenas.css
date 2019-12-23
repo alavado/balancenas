@@ -25,7 +25,7 @@
 
 .fila-lista-cenas:hover {
   text-decoration: none;
-  background: #85B7CC;
+  background: rgb(151, 224, 255);
 }
 
 .fila-lista-cenas {
@@ -33,7 +33,7 @@
   display: flex;
   background-color: #D3EBF5;
   margin-top: 12px;
-  font-size: .8em;
+  font-size: .85em;
   align-items: center;
   flex: 1;
 }
