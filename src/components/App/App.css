@@ -39,8 +39,12 @@ button:hover {
 .switch-wrapper {
   display: flex;
   justify-content: center;
+  flex: 1;
 }
  
 .switch-wrapper > div {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
